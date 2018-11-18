@@ -16,7 +16,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //setup index dengan metode get
 app.get('/', function(req, res){
-    res.send("Ini adalah index");
+    res.send("Ini adalah index yoyo");
     });
 
 //setup server
