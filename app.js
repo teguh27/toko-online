@@ -1,14 +1,16 @@
 var express = require("express");
 var path = require('path');
 var mongoose = require('mongoose');
+var config = require("./config/database");
 
 //connection syntax
-mongoose.connect("mongodb://localhost/toko-online");
+mongoose.connect(config.database);
+
 var db = mongoose.connection;
 db.on("error", console.error.bind(console,"connection error"));
 
 db.once("open",function(){
-console.log("Sudah Connect Ke Mongodb Mang");
+console.log("Sudah Connect Ke Mongodb Coy config database");
 });
 
 //initial app
@@ -26,7 +28,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //setup index dengan metode get
 app.get('/', function(req, res){
-    res.send("Ini adalah index yoyo dan sudah connect ke mongodb wa");
+    res.send("Ini adalah index yoyo dan sudah connect ke mongodb update");
     });
 
 //setup server
